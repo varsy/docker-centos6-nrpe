@@ -26,4 +26,12 @@ If you want to change `allowed_hosts` directive: provide the env variable ALLOWE
 -e ALLOWEDHOSTS=127.0.0.1,x.x.x.x,y.y.y.y
 ```
 
+To add your non-root mountpoints, please add them as volumes: `-v
+/mnt/data:/mnt/data`
+
 Do not forget to expose port `5666`.
+
+Example startup:
+```
+docker run -d -v /mnt/data:/mnt/data -p 5666:5666 --name nrpe varsy/centos6-nrpe 
+```
