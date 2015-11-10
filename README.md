@@ -9,6 +9,7 @@ Plugins list
 * nagios-plugins-load 
 * nagios-plugins-procs
 * check_file_exists.sh
+* nagios-plugins-tcp
 
 Usage
 =====
