@@ -17,6 +17,11 @@ if [[ -f /conf/nrpe.additional.cfg ]]; then
     log "Applying nrpe.additional.cfg configuration"
 fi
 
+if [[ -d /conf/plugins ]]; then
+    cp -prf /conf/plugins/* /usr/lib64/nagios/plugins/
+    log "Adding external plugins"
+fi
+
 if [[ ${ALLOWEDHOSTS} ]]; then
     sed -i "s|allowed_hosts=.*|allowed_hosts=${ALLOWEDHOSTS}|" /etc/nagios/nrpe.cfg
     log "Setting allowed_hosts to '${ALLOWEDHOSTS}'"

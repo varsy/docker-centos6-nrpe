@@ -23,6 +23,8 @@ If you want to add lines to `nrpe.cfg` file you could write it to `nrpe.addition
 docker run -v /path/to/your/conf:/conf varsy/centos6-nrpe
 ```
 
+You could add external nagios plugins. Put it to `conf/plugins/` folder and mount it into `/conf` as usual.
+
 If you want to change `allowed_hosts` directive: provide the env variable ALLOWEDHOSTS to your container like that:
 ```
 -e ALLOWEDHOSTS=127.0.0.1,x.x.x.x,y.y.y.y
