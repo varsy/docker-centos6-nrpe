@@ -19,6 +19,7 @@ fi
 
 if [[ -d /conf/plugins ]]; then
     cp -prf /conf/plugins/* /usr/lib64/nagios/plugins/
+    chmod +x /usr/lib64/nagios/plugins/*
     log "Adding external plugins"
 fi
 
